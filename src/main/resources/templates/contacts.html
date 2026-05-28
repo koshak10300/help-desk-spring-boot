@@ -26,24 +26,74 @@
         Контакты поддержки
     </h1>
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <table class="table table-striped align-middle mb-0">
-                <tbody>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td th:text="${supportEmail}">support@example.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">Телефон</th>
-                    <td th:text="${phone}">+7 (000) 000-00-00</td>
-                </tr>
-                <tr>
-                    <th scope="row">Время работы</th>
-                    <td th:text="${workTime}">Пн-Пт, 09:00-18:00</td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <table class="table table-striped align-middle mb-0">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td th:text="${supportEmail}">support@example.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Телефон</th>
+                            <td th:text="${phone}">+7 (000) 000-00-00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Время работы</th>
+                            <td th:text="${workTime}">Пн-Пт, 09:00-18:00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="h5 mb-3 fw-bold">Что указать в обращении</h2>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3 pb-2 border-bottom">
+                            <div class="d-flex">
+                                <div class="text-primary fw-bold me-3">1.</div>
+                                <div>
+                                    <strong>Тема обращения</strong>
+                                    <p class="mb-0 text-muted small">Кратко и понятно опишите суть проблемы</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3 pb-2 border-bottom">
+                            <div class="d-flex">
+                                <div class="text-primary fw-bold me-3">2.</div>
+                                <div>
+                                    <strong>Подробное описание</strong>
+                                    <p class="mb-0 text-muted small">Опишите ситуацию детально: что произошло, когда, при каких обстоятельствах</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3 pb-2 border-bottom">
+                            <div class="d-flex">
+                                <div class="text-primary fw-bold me-3">3.</div>
+                                <div>
+                                    <strong>Скриншоты или файлы</strong>
+                                    <p class="mb-0 text-muted small">Приложите снимки экрана для наглядности (если есть)</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="pb-2">
+                            <div class="d-flex">
+                                <div class="text-primary fw-bold me-3">4.</div>
+                                <div>
+                                    <strong>Контактные данные</strong>
+                                    <p class="mb-0 text-muted small">Укажите удобный способ связи для обратной связи</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

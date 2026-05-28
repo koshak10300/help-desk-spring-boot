@@ -8,6 +8,28 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .hero-card {
+            position: relative;
+        }
+        .logo-container {
+            position: absolute;
+            right: 30%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (max-width: 992px) {
+            .logo-container {
+                position: static;
+                transform: none;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .hero-card .d-flex {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -22,16 +44,23 @@
 </nav>
 
 <main class="container py-5">
-    <section class="hero-card p-5 rounded-4 border shadow-sm">
-        <h1 class="display-5 fw-bold" th:text="${welcomeMessage}">
-            Добро пожаловать
-        </h1>
-        <p class="lead mb-4">
-            Учебная система для регистрации и сопровождения обращений пользователей.
-        </p>
-        <a class="btn btn-primary btn-lg" th:href="@{/contacts}">
-            Связаться с поддержкой
-        </a>
+    <section class="hero-card p-5 rounded-4 border shadow-sm position-relative">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div class="flex-grow-1" style="max-width: 55%;">
+                <h1 class="display-5 fw-bold" th:text="${welcomeMessage}">
+                    Добро пожаловать
+                </h1>
+                <p class="lead mb-4">
+                    Учебная система для регистрации и сопровождения обращений пользователей.
+                </p>
+                <a class="btn btn-primary btn-lg" th:href="@{/contacts}">
+                    Связаться с поддержкой
+                </a>
+            </div>
+            <div class="logo-container">
+                <img th:src="@{/images/logo.png}" alt="Logo" height="180">
+            </div>
+        </div>
     </section>
 
     <section class="row g-4 mt-4">
