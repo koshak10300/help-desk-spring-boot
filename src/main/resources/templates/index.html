@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${pageTitle}">Help Desk</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand fw-bold" th:href="@{/}">Help Desk</a>
+        <div class="navbar-nav">
+            <a class="nav-link active" th:href="@{/}">Главная</a>
+            <a class="nav-link" th:href="@{/about}">О нас</a>
+            <a class="nav-link" th:href="@{/contacts}">Контакты</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5">
+    <section class="hero-card p-5 rounded-4 border shadow-sm">
+        <h1 class="display-5 fw-bold" th:text="${welcomeMessage}">
+            Добро пожаловать
+        </h1>
+        <p class="lead mb-4">
+            Учебная система для регистрации и сопровождения обращений пользователей.
+        </p>
+        <a class="btn btn-primary btn-lg" th:href="@{/contacts}">
+            Связаться с поддержкой
+        </a>
+    </section>
+
+    <section class="row g-4 mt-4">
+        <div class="col-md-4" th:each="feature : ${features}">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h2 class="h5" th:text="${feature}">Функция</h2>
+                    <p class="card-text text-muted">
+                        Этот блок создан на основе данных, переданных из контроллера.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer py-4 border-top">
+    <div class="container text-center text-muted">
+        Help Desk - учебный проект на Spring Boot
+    </div>
+</footer>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

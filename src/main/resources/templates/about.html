@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${pageTitle}">О нас</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand fw-bold" th:href="@{/}">Help Desk</a>
+        <div class="navbar-nav">
+            <a class="nav-link" th:href="@{/}">Главная</a>
+            <a class="nav-link active" th:href="@{/about}">О нас</a>
+            <a class="nav-link" th:href="@{/contacts}">Контакты</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+            <h1 class="fw-bold" th:text="${pageTitle}">О нас</h1>
+            <p class="lead" th:text="${description}">
+                Описание проекта
+            </p>
+            <p>
+                В следующих модулях система будет развиваться: появятся заявки,
+                статусы, пользователи, база данных и роли доступа.
+            </p>
+        </div>
+        <div class="col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="h5">Команда проекта</h2>
+                    <p class="mb-0" th:text="${teamName}">Команда Help Desk</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
