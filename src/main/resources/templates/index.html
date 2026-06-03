@@ -54,9 +54,14 @@
                 <p class="lead mb-4">
                     Учебная система для регистрации и сопровождения обращений пользователей.
                 </p>
-                <a class="btn btn-primary btn-lg" th:href="@{/contacts}">
-                    Связаться с поддержкой
-                </a>
+                <div class="d-flex gap-3">
+                    <a class="btn btn-primary btn-lg" th:href="@{/contacts}">
+                        Связаться с поддержкой
+                    </a>
+                    <a th:href="@{/tickets/new}" class="btn btn-success btn-lg">
+                        Создать заявку
+                    </a>
+                </div>
             </div>
             <div class="logo-container">
                 <img th:src="@{/images/logo.png}" alt="Logo" height="180">
