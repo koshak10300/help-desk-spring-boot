@@ -22,7 +22,7 @@ public class SecurityConfig {
                         .requestMatchers(PathRequest.toH2Console()).permitAll()
 
                         .requestMatchers(HttpMethod.GET,
-                                "/", "/about", "/contacts", "/login",
+                                "/", "/about", "/contacts", "/login", "/access-denied",
                                 "/tickets/new", "/tickets/*/success"
                         ).permitAll()
                         .requestMatchers(HttpMethod.POST, "/tickets").permitAll()
@@ -45,6 +45,9 @@ public class SecurityConfig {
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/login?logout")
                         .permitAll()
+                )
+                .exceptionHandling(exception -> exception
+                        .accessDeniedPage("/access-denied")
                 );
 
         return http.build();
