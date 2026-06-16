@@ -19,7 +19,12 @@
 
 Через Docker:
 
-docker run --name helpdesk-postgres -e POSTGRES_DB=helpdesk -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres:16
+docker run --name helpdesk-postgres
+-e POSTGRES_DB=helpdesk
+-e POSTGRES_USER=postgres
+-e POSTGRES_PASSWORD=admin
+-p 5432:5432
+-d postgres:16
 
 Или скачайте установщик с официального сайта postgresql.org и создайте базу данных helpdesk.
 
